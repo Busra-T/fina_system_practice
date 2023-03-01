@@ -11,10 +11,12 @@ public class Hooks {
 
     @Before(order=1)
     public void setupMethod(){
+
         System.out.println("-->@Before: RUNNING BEFORE EACH SCENARIO");
     }
     @Before (value="@login",order=2)
     public void login_scenario_before(){
+
         System.out.println("-->@Before: RUNNING BEFORE EACH SCENARIO");
     }
 
