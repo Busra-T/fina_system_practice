@@ -1,5 +1,6 @@
 package com.fina.pages;
 
+import com.fina.utilities.ConfigurationReader;
 import com.fina.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,5 +20,15 @@ public class FinaLoginPage {
 
     @FindBy(xpath = "//button[.=\"Log in\"]")
     public WebElement btn_login;
+
+    public void logIn(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("urlLogin"));
+        input_email.sendKeys(ConfigurationReader.getProperty("email"));
+        input_password.sendKeys(ConfigurationReader.getProperty("password"));
+        btn_login.click();
+    }
+
+    @FindBy(xpath = "//p[contains(.,\"Wrong login/password\")]")
+    public WebElement invalidMessage;
 
 }

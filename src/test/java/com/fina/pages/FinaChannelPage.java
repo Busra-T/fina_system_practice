@@ -20,8 +20,14 @@ public class FinaChannelPage {
     @FindBy(id = "ui-id-2")
     public WebElement create;
 
-    @FindBy(xpath = "//span[contains(.,'Demo Channel2')]")
+    @FindBy(xpath = "(//span[contains(.,'Demo Channel2')])[1]")
     public WebElement channel;
+
+   @FindBy(xpath = "(//textarea[@placeholder='Write something...'])[1]")
+    public WebElement bx_message;
+
+   @FindBy(xpath = "(//button[.=\"Send\"])[1]")
+    public WebElement btn_send;
 
 
 }

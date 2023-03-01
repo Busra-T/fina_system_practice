@@ -41,4 +41,17 @@ public class FinaLogin_StepDefinitions {
         BrowserUtils.waitForTitleContains(expectedInTitle);
         BrowserUtils.verifyTitleContains(expectedInTitle);
     }
+
+    @And("user enters invalid {string} and {string} combinations")
+    public void userEntersInvalidAndCombinations(String email, String password) {
+        finaLoginPage.input_email.sendKeys(email);
+        finaLoginPage.input_password.sendKeys(password);
+        finaLoginPage.btn_login.click();
+    }
+
+    @Then("user should see {string} message")
+    public void userShouldSeeMessage(String message) {
+        String actual=finaLoginPage.invalidMessage.getText();
+        Assert.assertTrue(actual.contains(message));
+    }
 }

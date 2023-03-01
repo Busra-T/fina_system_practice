@@ -1,6 +1,7 @@
 package com.fina.step_definitions;
 
 import com.fina.pages.FinaChannelPage;
+import com.fina.pages.FinaLoginPage;
 import com.fina.utilities.BrowserUtils;
 import com.fina.utilities.ConfigurationReader;
 import com.fina.utilities.Driver;
@@ -12,10 +13,8 @@ import org.junit.Assert;
 public class FinaChannel_StepDefinitions {
 
     FinaChannelPage finaChannelPage=new FinaChannelPage();
-    @Given("user goes to Discuss page")
-    public void userGoesToDiscussPage() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("urlDiscuss"));
-    }
+    FinaLoginPage finaLoginPage=new FinaLoginPage();
+
 
     @Then("user clicks + sign of Channels")
     public void userClicksSignOfChannels() {
@@ -37,4 +36,27 @@ public class FinaChannel_StepDefinitions {
     public void userShouldSeeTheUnderChannels(String arg0) {
         Assert.assertTrue( finaChannelPage.channel.isDisplayed());
     }
+
+
+    @Given("user goes to the Discuss page")
+    public void userGoesToTheDiscussPage() {
+        finaLoginPage.logIn();
+    }
+
+    @Then("user clicks on #{string}")
+    public void userClicksOn(String channelName) {
+        finaChannelPage.channel.click();
+    }
+
+    @And("user writes a {string} in the message box")
+    public void userWritesAInTheMessageBox(String message) {
+        finaChannelPage.bx_message.sendKeys(message);
+    }
+
+    @Then("user clicks on Send button")
+    public void userClicksOnSendButton() {
+        finaChannelPage.btn_send.click();
+    }
+
+
 }
