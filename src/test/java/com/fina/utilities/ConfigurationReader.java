@@ -16,6 +16,7 @@ public class ConfigurationReader {
 
             properties.load(file);
 
+
             file.close();
 
         } catch (IOException e){
