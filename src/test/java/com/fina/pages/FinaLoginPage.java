@@ -8,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class FinaLoginPage {
 
-    public FinaLoginPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public FinaLoginPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(id = "login")
@@ -21,7 +21,7 @@ public class FinaLoginPage {
     @FindBy(xpath = "//button[.=\"Log in\"]")
     public WebElement btn_login;
 
-    public void logIn(){
+    public void logIn() {
         Driver.getDriver().get(ConfigurationReader.getProperty("urlLogin"));
         input_email.sendKeys(ConfigurationReader.getProperty("email"));
         input_password.sendKeys(ConfigurationReader.getProperty("password"));
@@ -30,5 +30,14 @@ public class FinaLoginPage {
 
     @FindBy(xpath = "//p[contains(.,\"Wrong login/password\")]")
     public WebElement invalidMessage;
+
+
+
+
+
+
+
+
+
 
 }

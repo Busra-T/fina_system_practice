@@ -10,6 +10,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
+import java.util.Map;
+
 public class FinaChannel_StepDefinitions {
 
     FinaChannelPage finaChannelPage=new FinaChannelPage();
@@ -21,19 +23,19 @@ public class FinaChannel_StepDefinitions {
        finaChannelPage.btn_plus.click();
     }
 
-    @Then("user writes {string} for the new channel")
-    public void userWritesForTheNewChannel(String channelName) {
+    @Then("user writes channel name for the new channel")
+    public void userWritesChannelNameForTheNewChannel(Map<String,String> channelName) {
         BrowserUtils.waitForVisibilityOf(finaChannelPage.bx_channelName);
-        finaChannelPage.bx_channelName.sendKeys(channelName);
+        finaChannelPage.bx_channelName.sendKeys(channelName.get("channel name"));
     }
 
-    @And("user clicks on #Create {string} to add the channel")
-    public void userClicksOnToAddTheChannel(String channelName ) {
+    @And("user clicks on #Create channel name to add the channel")
+    public void userClicksOnToAddTheChannel() {
         finaChannelPage.create.click();
     }
 
-    @Then("user should see the {string} under Channels")
-    public void userShouldSeeTheUnderChannels(String arg0) {
+    @Then("user should see the channel name under Channels")
+    public void userShouldSeeTheChannelNameUnderChannels() {
         Assert.assertTrue( finaChannelPage.channel.isDisplayed());
     }
 

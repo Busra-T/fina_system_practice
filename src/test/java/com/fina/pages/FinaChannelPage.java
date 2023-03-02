@@ -1,5 +1,6 @@
 package com.fina.pages;
 
+import com.fina.utilities.ConfigurationReader;
 import com.fina.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,7 +21,7 @@ public class FinaChannelPage {
     @FindBy(id = "ui-id-2")
     public WebElement create;
 
-    @FindBy(xpath = "(//span[contains(.,'Demo Channel2')])[1]")
+    @FindBy(xpath = "//span[contains(.,'Wednesday')]")
     public WebElement channel;
 
    @FindBy(xpath = "(//textarea[@placeholder='Write something...'])[1]")
@@ -28,6 +29,8 @@ public class FinaChannelPage {
 
    @FindBy(xpath = "(//button[.=\"Send\"])[1]")
     public WebElement btn_send;
+
+
 
 
 }
