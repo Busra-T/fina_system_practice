@@ -21,7 +21,7 @@ public class FinaChannelPage {
     @FindBy(id = "ui-id-2")
     public WebElement create;
 
-    @FindBy(xpath = "//span[contains(.,'Wednesday')]")
+    @FindBy(xpath = "(//div[@title=\"Wednesday\"])[1]")
     public WebElement channel;
 
    @FindBy(xpath = "(//textarea[@placeholder='Write something...'])[1]")
