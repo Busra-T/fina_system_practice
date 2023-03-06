@@ -64,6 +64,12 @@ public class BrowserUtils {
         wait.until(ExpectedConditions.invisibilityOf(target));
 
     }
+    public static void waitForVisibilityOf(WebElement target){
+
+        WebDriverWait wait=new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(target));
+
+    }
 
     public static void waitForTitleContains(String title){
 
