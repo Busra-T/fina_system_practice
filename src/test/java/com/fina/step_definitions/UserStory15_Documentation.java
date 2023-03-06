@@ -36,7 +36,8 @@ FinaLoginPage finaLoginPage = new FinaLoginPage();
     public void user_clicks_option(String string) {
         String mainHandle = Driver.getDriver().getWindowHandle();
         BrowserUtils.sleep(4);
-        docPage.ClickMenu(string);
+        WebElement element = Driver.getDriver().findElement(By.partialLinkText(string));
+        element.click();
         BrowserUtils.sleep(3);
         Set<String> windows = Driver.getDriver().getWindowHandles();
 
