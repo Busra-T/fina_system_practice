@@ -23,8 +23,8 @@
 
                 <configuration>
                     <parallel>methods</parallel>
-                    <useUnlimitedThreads>true</useUnlimitedThreads>
-                    <threadCount>4</threadCount>
+                    <useUnlimitedThreads>false</useUnlimitedThreads>
+                    <threadCount>2</threadCount>
                     <perCoreThreadCount>false</perCoreThreadCount>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
