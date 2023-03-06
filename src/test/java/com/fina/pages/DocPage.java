@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import javax.print.Doc;
 import java.util.List;
 
-public class DocPage extends InitialPage {
+public class DocPage {
     public DocPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }

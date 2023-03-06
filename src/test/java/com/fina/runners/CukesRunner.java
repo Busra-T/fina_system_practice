@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/fina/step_definitions",
         dryRun = false,
-        tags = "@abu",
+        tags = "",
         publish = true
      //   monochrome = false,
 
