@@ -9,17 +9,15 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         plugin = {
-                "json:target/cucumber.json",
                 "pretty",
                 "html:target/cucumber-reports.html",
-                "junit:target/junit/junit-report.xml",
                 "rerun:target/rerun.txt",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features",
         glue = "com/fina/step_definitions",
         dryRun = false,
-        tags = "@wip",
+        tags = "",
         publish = true
      //   monochrome = false,
 
