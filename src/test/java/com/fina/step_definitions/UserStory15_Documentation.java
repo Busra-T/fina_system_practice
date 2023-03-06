@@ -1,27 +1,35 @@
 package com.fina.step_definitions;
 
 import com.fina.pages.DocPage;
+import com.fina.pages.FinaLoginPage;
 import com.fina.utilities.BrowserUtils;
+import com.fina.utilities.ConfigurationReader;
 import com.fina.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.eo.Do;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import java.util.Set;
 
 public class UserStory15_Documentation {
     DocPage docPage = new DocPage();
-
+FinaLoginPage finaLoginPage = new FinaLoginPage();
     @Given("user is logged in")
     public void user_is_logged_in() {
-        docPage.LogIn();
+        Driver.getDriver().get(ConfigurationReader.getProperty("urlLogin"));
+        finaLoginPage.input_email.sendKeys(ConfigurationReader.getProperty("email"));
+       finaLoginPage.input_password.sendKeys(ConfigurationReader.getProperty("password"));
+        finaLoginPage.btn_login.click();
     }
 
     @When("user clicks {string} button")
     public void user_clicks_button(String string) {
-        docPage.ClickMenu(string);
+        WebElement element = Driver.getDriver().findElement(By.partialLinkText(string));
+        element.click();
     }
 
     @When("user clicks {string} option")
